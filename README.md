@@ -54,9 +54,9 @@
 
 配置好后，一直卡在 `[EB|#LOG:EXITBS:START]` 。参考了 [TroubleShooting](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) 各种方法都试过了，都没有解决。
 
-在我几乎要放弃的时候，我十分感谢 `MaLd0n` 发布的 [Hackintosh EFI Folders with OpenCore MOD](https://www.olarila.com/topic/25111-hackintosh-efi-folders-with-opencore-mod/) 帖子
+在我几乎要放弃的时候，十分感谢 `MaLd0n` 发布的 [Hackintosh EFI Folders with OpenCore MOD](https://www.olarila.com/topic/25111-hackintosh-efi-folders-with-opencore-mod/) 帖子
 
-我下载了他为 `Desktop AlderLake and RaptorLake` 准备的 EFI 下载下来之后，没有任何改动，直接安装成功！感谢 `MaLd0n` ！ 
+我下载了他为 `Desktop AlderLake and RaptorLake` 准备的 EFI，没有任何调整，直接安装成功！感谢 `MaLd0n` ！ 
 (TODO: 为什么 `MaLd0n` 就可以运行？）
 
 ## 安装完的优化
