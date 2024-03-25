@@ -66,6 +66,12 @@
 
 添加 `AirportItlwm.kext`
 
+### 启动时多次重启问题
+启动系统时，`OpenCore` 刷完日志应该进入 MacOS 登陆界面。但实际经常刷完代码后系统需要再重启一次才能进入登陆界面。
+
+解决方案：去掉 `boot-args` 的 `-v` 参数（不刷日志，显示苹果进度条）
+
+
 ### CPU性能问题
 MacOS 对 Intel 大小核的支持不好。搜索一番，总结通常需要使用两个 kext：
 - [CPUFriend](https://github.com/acidanthera/CPUFriend)：调整 CPU 睿频。
@@ -80,7 +86,7 @@ MacOS 对 Intel 大小核的支持不好。搜索一番，总结通常需要使�
 sysctl -n hw.logicalcpu
 sysctl -n hw.physicalcpu
 ```
-看到实际变成了 12核心28线程，而 14700KF 实际架构是 8P12E 总共 28 线程。不知道哪里出了问题，所以实际未使用。
+看到实际变成了 12核心28线程，而 14700KF 实际架构是 8P12E，应该是 8核心28线程。感觉有异常实际未使用。
 
 （如果同学有建议请提 issue）
 
@@ -138,7 +144,7 @@ pmset -g assertions
 ```
 
 搜索并尝试了各种方法都不生效
-- `boot-arg` 增加 `darkwake=0`
+- `boot-args` 增加 `darkwake=0`
 - [这个post](https://www.tonymacx86.com/threads/solved-ventura-sonoma-random-scheduled-pm-wake-from-sleep.323359/)里说的 `sudo pmset Schedule cancelall` + `sudo chflags schg /Library/Preferences/SystemConfiguration/com.apple.AutoWake.plist`
 
 搜索 `CSPNEvaluation` 这个关键字，找到 [这个post](https://discussions.apple.com/thread/255274317?sortBy=best) 的方法，设置了 `powerd.plist` `CoreSmartPowerNap=false` ，成功解决。感谢前人的经验！
