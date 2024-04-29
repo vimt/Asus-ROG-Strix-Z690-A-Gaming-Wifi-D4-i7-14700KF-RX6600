@@ -79,9 +79,13 @@ MacOS 对 Intel 大小核的支持不好。搜索一番，总结通常需要使�
 
 但实际我都没有使用：
 
+**为什么 没有使用 CPUFriend：**
+
 在 `iMacPro1,1` 下，用 `CPU-S` 看睿频是 700-5500。不需要额外设置睿频
 
-使用了 `CpuTopologyRebuild` 之后，通过
+**为什么没有使用 CpuTopologyRebuild：**
+
+安装了 `CpuTopologyRebuild` 之后，通过
 ```shell
 sysctl -n hw.logicalcpu
 sysctl -n hw.physicalcpu
@@ -143,11 +147,7 @@ pmset -g assertions
 2024-03-18 10:05:09 +0800 Sleep               	Entering Sleep state due to 'Maintenance Sleep':TCPKeepAlive=disabled Using AC (Charge:0%)
 ```
 
-搜索并尝试了各种方法都不生效
-- `boot-args` 增加 `darkwake=0`
-- [这个post](https://www.tonymacx86.com/threads/solved-ventura-sonoma-random-scheduled-pm-wake-from-sleep.323359/)里说的 `sudo pmset Schedule cancelall` + `sudo chflags schg /Library/Preferences/SystemConfiguration/com.apple.AutoWake.plist`
-
-搜索 `CSPNEvaluation` 这个关键字，找到 [这个post](https://discussions.apple.com/thread/255274317?sortBy=best) 的方法，设置了 `powerd.plist` `CoreSmartPowerNap=false` ，成功解决。感谢前人的经验！
+添加 `Disable RTC wake scheduling` 这个 Patch。 
 
 ### 有线网卡
 `MaLd0n` 的EFI 带了 `AppleIGC.kext` 直接能用，并未特殊调整。
