@@ -3,14 +3,14 @@
 ## 硬件信息
 - CPU： Intel i7-14700KF
 - 主板： Asus ROG Strix Z690-A Gaming Wifi D4
-- 内存： 2x32GB DDR4 3200MHz
+- 内存： 4x32GB DDR4 3200MHz
 - 显卡： AMD Radeon RX 6600
 - 有线网卡： Intel I225-V
 - 无线网卡： Intel AX201
 - 声卡： Realtek USB2.0 Audio
 
 ## 工作情况
-<img width="280" alt="image" src="https://github.com/vimt/Asus-ROG-Strix-Z690-A-Gaming-Wifi-D4-i7-14700KF-RX6600/assets/10686631/863a2c21-ca68-47fe-9e84-3046217594d0">
+<img width="280" alt="image" src="https://github.com/vimt/Asus-ROG-Strix-Z690-A-Gaming-Wifi-D4-i7-14700KF-RX6600/assets/10686631/66fb7280-5ee6-4a57-a2be-0d4744581dad">
 
 - MacOS Sonoma 14.3.1
 - Opencore: 0.9.7
